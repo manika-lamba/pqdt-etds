@@ -100,7 +100,7 @@ Here you see the following visualizations - Cholorpeth maps for the distribution
 library(DT)
 library("shiny")
 
-data <- read.csv(url("https://raw.githubusercontent.com/manika-lamba/phd/main/storyboard/data.csv?token=GHSAT0AAAAAACHQMUJF7NO7S3NUWDSGEDDKZICJF7A"))
+data <- read.csv(url("https://raw.githubusercontent.com/manika-lamba/pqdt-etds/main/data.csv"))
 data <- data.frame(data)
 ```
 
@@ -137,7 +137,7 @@ downloadHandler(
 ### Result Output
 
 ```{r}
-data <- read.csv("C:\\Users\\Harkirat Singh Lamba\\Desktop\\PhD_ML\\Searchable database FINAL results\\working_shinyapp\\data_new.csv")
+data <- read.csv(url("https://raw.githubusercontent.com/manika-lamba/pqdt-etds/main/data.csv"))
 data <- data.frame(data)
 dataset <- reactive({
     return(subset(data, (Topic == input$Topic & Type == input$Type)))
@@ -145,7 +145,6 @@ dataset <- reactive({
   output$mydata <- renderDataTable(dataset(), options = list(scrollX = T))
 
 dataTableOutput('mydata')
-
 ```
 
 # Predict the Category {data-orientation="rows"}
